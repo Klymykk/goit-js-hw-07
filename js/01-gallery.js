@@ -7,7 +7,7 @@ const item = galleryItems.map( ({preview, original, description }) => {
     <a class="gallery__link" href="${original}">
       <img
         class="gallery__image"
-        src="${preview}"
+        src="${preview}" 
         data-source="${original}"
         alt="${description}"
       />
@@ -23,5 +23,7 @@ const item = galleryItems.map( ({preview, original, description }) => {
     if (!event.target.classList.contains("gallery__image")) {
         return;
     }
-    console.log(event.currenTarget)
+    const instance = basicLightbox.create(item)
+    instance.show()
+    console.log(event.target)
   }
