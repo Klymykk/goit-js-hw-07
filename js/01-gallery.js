@@ -23,7 +23,11 @@ const item = galleryItems.map( ({preview, original, description }) => {
     if (!event.target.classList.contains("gallery__image")) {
         return;
     }
-    const instance = basicLightbox.create(item)
+    const instance = basicLightbox.create(`
+      <img
+        class="gallery__image"
+        src="${event.target.dataset.source}" 
+        alt="${event.target.alt}"
+      />`)
     instance.show()
-    console.log(event.target)
   }
