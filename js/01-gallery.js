@@ -30,4 +30,12 @@ const item = galleryItems.map( ({preview, original, description }) => {
         alt="${event.target.alt}"
       />`)
     instance.show()
+    document.addEventListener("keydown", event => {
+      event.preventDefault();
+    
+      if (event.code === "Escape") {
+        instance.close();
+      }
+    });
   }
+
